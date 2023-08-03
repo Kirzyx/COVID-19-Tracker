@@ -20,5 +20,5 @@ The COVID-19 Tracker Web App is built using React, a powerful JavaScript library
 
 ## Deployment
 
-The web app is deployed using GitHub Pages, allowing easy accessibility for users to view and interact with the application online. You can access the app at [https://your-github-username.github.io/covid-tracker](https://your-github-username.github.io/covid-tracker).
+The web app is deployed using GitHub Pages, allowing easy accessibility for users to view and interact with the application online. You can access the app at [https://github.com/Kirzyx/COVID-19-Tracker](https://github.com/Kirzyx/COVID-19-Tracker).
 
