@@ -15,10 +15,10 @@ The Covid Tracker is a web application built using Django. It allows users to ma
 
 ### 1. Clone the Repository
 
-\```bash
+```bash
 git clone <repository-url>
 cd <repository-name>
-\```
+```
 
 ### 2. Setup Virtual Environment (Recommended)
 
