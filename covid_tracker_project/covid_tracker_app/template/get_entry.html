@@ -1,0 +1,8 @@
+{% if entry %}
+    <h1>Details for {{ entry.country }}</h1>
+    <p>Date: {{ entry.date }}</p>
+    <p>Cases: {{ entry.c_cases }}</p>
+    <p>Deaths: {{ entry.c_deaths }}</p>
+{% else %}
+    <p>No entry found for the specified country.</p>
+{% endif %}

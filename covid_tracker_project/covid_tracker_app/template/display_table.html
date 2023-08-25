@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>All Entries</h1>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Country</th>
+        <th>Cases</th>
+        <th>Deaths</th>
+    </tr>
+    {% for entry in entries %}
+    <tr>
+        <td>{{ entry.date }}</td>
+        <td>{{ entry.country }}</td>
+        <td>{{ entry.c_cases }}</td>
+        <td>{{ entry.c_deaths }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
