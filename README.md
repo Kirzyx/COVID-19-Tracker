@@ -57,4 +57,5 @@ Visit `http://127.0.0.1:8000/` in your browser.
 
 ## 🙏 Acknowledgments
 - This project was inspired by an assignment for CSCP 2430-02 at Seattle University.
+- The project served as a hands-on approach to learning Python and Django.
 - Thanks to Django's comprehensive documentation and community.
