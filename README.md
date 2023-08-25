@@ -1,24 +1,60 @@
-# COVID-19-Tracker
-# COVID-19 Tracker Web App
+# Covid Tracker Django Project
 
-The COVID-19 Tracker Web App is a user-friendly and interactive web application designed to keep users informed about the latest COVID-19 data for various countries. The app provides real-time updates on the number of cases, deaths, and recoveries, allowing users to stay informed about the global impact of the pandemic.
+## 📌 Description
 
-## Features
+The Covid Tracker is a web application built using Django. It allows users to manage Covid-19 data entries by country, providing a way to add, update, view, and remove data related to Covid-19 cases and deaths.
 
-- **Live Data Updates**: The web app fetches the latest COVID-19 data from reliable sources and displays it in an easy-to-understand format. Users can view the total number of confirmed cases, deaths, and recoveries for different countries.
+## 🚀 Features
 
-- **Data Visualization**: The app uses interactive charts and graphs to present COVID-19 trends over time, enabling users to grasp the data visually and comprehend the spread of the virus more effectively.
+- **Add/Update Data**: Users can input new data entries or update existing ones by specifying the country, date, number of cases, and number of deaths.
+- **View Data**: All added entries can be viewed in a structured table format.
+- **Search Data**: Users can view specific data entries by country.
+- **Delete Data**: Users have the option to remove data entries by country.
 
-- **Add New Data Entries**: Users can contribute to the data by adding new COVID-19 data entries for specific countries. This feature encourages community participation and helps keep the data up-to-date.
+## 🛠️ Setup & Installation
 
-- **Search Functionality**: The app allows users to search for data for a specific country, making it convenient to find the information they need quickly.
+### 1. Clone the Repository
 
-- **Responsive Design**: The web app is designed with a responsive layout, ensuring seamless user experience across various devices, including desktops, tablets, and mobile phones.
+\```bash
+git clone <repository-url>
+cd <repository-name>
+\```
 
-## Technologies Used
+### 2. Setup Virtual Environment (Recommended)
 
-The COVID-19 Tracker Web App is built using React, a powerful JavaScript library for building user interfaces. React enables the creation of reusable components, making the app maintainable and scalable. The app also uses HTML and CSS for the front-end structure and styling.
+```bash
+python -m venv venv
+source venv/bin/activate  # For Windows, use `venv\Scripts\activate`
+```
 
-## Deployment
+### 3. Install Dependencies
 
-The web app is deployed using GitHub Pages, allowing easy accessibility for users to view and interact with the application online. You can access the app at [https://your-github-username.github.io/covid-tracker](https://your-github-username.github.io/covid-tracker).
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run Migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 5. Run the Development Server
+
+```bash
+python manage.py runserver
+```
+
+Visit `http://127.0.0.1:8000/` in your browser.
+
+## 📖 Usage
+
+1. Navigate to the dashboard to access the core features.
+2. Add or update data entries using the provided form.
+3. View all data entries or search by country.
+4. Remove data entries as needed.
+
+## 🙏 Acknowledgments
+- This project was inspired by an assignment for CSCP 2430-02 at Seattle University.
+- Thanks to Django's comprehensive documentation and community.
