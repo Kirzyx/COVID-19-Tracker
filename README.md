@@ -1,41 +1,24 @@
-COVID-19 Data Tracker
-The COVID-19 Data Tracker is a Django web application that allows users to manage and track COVID-19 data worldwide. The application utilizes a hash table data structure to store and manage COVID-19 data entries for different countries.
+# COVID-19-Tracker
+# COVID-19 Tracker Web App
 
-Features
-Add new COVID-19 data entries (cumulative cases and deaths) for various countries.
-Retrieve COVID-19 data for a specific country.
-Remove COVID-19 data entries for a specific country.
-Display the current COVID-19 data hash table.
-Setup and Installation
-Make sure you have Python installed. This project was developed using Python 3. It's recommended to use a virtual environment for isolation.
+The COVID-19 Tracker Web App is a user-friendly and interactive web application designed to keep users informed about the latest COVID-19 data for various countries. The app provides real-time updates on the number of cases, deaths, and recoveries, allowing users to stay informed about the global impact of the pandemic.
 
-Install Django framework:
+## Features
 
-Copy code
-pip install django
-Clone this repository:
+- **Live Data Updates**: The web app fetches the latest COVID-19 data from reliable sources and displays it in an easy-to-understand format. Users can view the total number of confirmed cases, deaths, and recoveries for different countries.
 
-bash
-Copy code
-git clone https://github.com/yourusername/covid-data-tracker.git
-cd covid-data-tracker
-Run the migrations to set up the database:
+- **Data Visualization**: The app uses interactive charts and graphs to present COVID-19 trends over time, enabling users to grasp the data visually and comprehend the spread of the virus more effectively.
 
-Copy code
-python manage.py migrate
-Start the development server:
+- **Add New Data Entries**: Users can contribute to the data by adding new COVID-19 data entries for specific countries. This feature encourages community participation and helps keep the data up-to-date.
 
-Copy code
-python manage.py runserver
-Open a web browser and navigate to http://127.0.0.1:8000/ to access the COVID-19 Data Tracker.
+- **Search Functionality**: The app allows users to search for data for a specific country, making it convenient to find the information they need quickly.
 
-Usage
-Click on the "Add Entry" link to add a new COVID-19 data entry for a specific country. Make sure to provide the date, country name, cumulative cases, and cumulative deaths.
-Use the "Get Entry" link to retrieve the COVID-19 data for a specific country.
-To remove a COVID-19 data entry, select the "Remove Entry" option and provide the country name.
-Click on the "Display Table" link to view the current state of the hash table.
-Contributing
-Contributions are welcome! If you find any bugs or want to enhance the application, feel free to submit pull requests.
+- **Responsive Design**: The web app is designed with a responsive layout, ensuring seamless user experience across various devices, including desktops, tablets, and mobile phones.
 
-Acknowledgments
-This project was inspired by an assignment for CSCP 2430-02 at Seattle University.
+## Technologies Used
+
+The COVID-19 Tracker Web App is built using React, a powerful JavaScript library for building user interfaces. React enables the creation of reusable components, making the app maintainable and scalable. The app also uses HTML and CSS for the front-end structure and styling.
+
+## Deployment
+
+The web app is deployed using GitHub Pages, allowing easy accessibility for users to view and interact with the application online. You can access the app at [https://your-github-username.github.io/covid-tracker](https://your-github-username.github.io/covid-tracker).
