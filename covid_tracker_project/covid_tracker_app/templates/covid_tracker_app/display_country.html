@@ -1,0 +1,14 @@
+{% extends "covid_tracker_app/base.html" %}
+
+{% block content %}
+  <h2>Details for {{ country_name }}</h2>
+
+  {% if summary.total_cases and summary.total_deaths %}
+    <p><strong>Total Cases:</strong> {{ summary.total_cases }}</p>
+    <p><strong>Total Deaths:</strong> {{ summary.total_deaths }}</p>
+  {% else %}
+    <p>No data available for the specified country.</p>
+  {% endif %}
+
+  <a href="{% url 'get_entry_page' %}">Search for another country</a>
+{% endblock %}

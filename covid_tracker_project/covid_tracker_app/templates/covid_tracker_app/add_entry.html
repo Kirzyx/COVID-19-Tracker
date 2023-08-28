@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    Date: <input type="date" name="date"><br>
+    Country: <input type="text" name="country"><br>
+    Cases: <input type="number" name="c_cases"><br>
+    Deaths: <input type="number" name="c_deaths"><br>
+    <input type="submit" value="Add/Update Entry">
+</form>

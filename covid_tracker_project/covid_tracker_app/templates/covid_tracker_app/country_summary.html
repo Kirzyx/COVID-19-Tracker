@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Total Cases</th>
+            <th>Total Deaths</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in summary %}
+        <tr>
+            <td>{{ entry.country }}</td>
+            <td>{{ entry.total_cases }}</td>
+            <td>{{ entry.total_deaths }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
