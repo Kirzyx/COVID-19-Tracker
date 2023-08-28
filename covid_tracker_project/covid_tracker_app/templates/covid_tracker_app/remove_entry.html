@@ -1,0 +1,22 @@
+{% extends "covid_tracker_app/base.html" %}
+
+{% block content %}
+  <h2>Remove a Data Entry</h2>
+
+  <form action="{% url 'remove_entry' %}" method="post">
+    {% csrf_token %}
+    <label for="country_name">Country:</label>
+    <input type="text" name="country_name" id="country_name" required>
+    <input type="submit" value="Remove">
+  </form>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <a href="{% url 'index' %}">Go back to main menu</a>
+{% endblock %}

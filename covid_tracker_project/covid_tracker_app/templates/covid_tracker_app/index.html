@@ -1,0 +1,14 @@
+<!-- covid_tracker_app/templates/covid_tracker_app/index.html -->
+
+{% extends "covid_tracker_app/base.html" %}
+
+{% block content %}
+  <h1>Covid Tracker</h1>
+   <!-- Main Menu -->
+   <div class="menu">
+        <a href="{% url 'add_entry' %}">Add a new data entry</a><br>
+        <a href="{% url 'get_entry_page' %}">Get a data entry for a specific country</a><br>
+        <a href="{% url 'remove_entry_page' %}">Remove a data entry</a><br>
+        <a href="{% url 'display_entries' %}">Display all entries</a><br>
+    </div>
+{% endblock %}
