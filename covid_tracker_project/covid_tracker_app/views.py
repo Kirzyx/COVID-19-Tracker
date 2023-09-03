@@ -2,33 +2,54 @@ from django.shortcuts import render, redirect
 from .models import DataEntry
 from django.db.models import Sum
 from django.urls import reverse
+from django.contrib import messages
+from datetime import datetime
+
+
+
+from datetime import datetime
 
 def add_entry(request):
     if request.method == "POST":
         country_name = request.POST.get('country')
-        date = request.POST.get('date')
+        date_str = request.POST.get('date')
         c_cases = int(request.POST.get('c_cases', 0))
         c_deaths = int(request.POST.get('c_deaths', 0))
-        
-        # Update or create the entry
-        entry, created = DataEntry.objects.get_or_create(country=country_name)
-        if created or (not created and entry.date <= date):  # Only update if it's a newer date
-            entry.date = date
-            entry.c_cases = c_cases
-            entry.c_deaths = c_deaths
-            entry.save()
-        
-        return redirect('display_entries')  # Redirect to the display page after adding
 
-    return render(request, 'add_entry.html')
+        # Convert string date to datetime.date object
+        date = datetime.strptime(date_str, '%Y-%m-%d').date()
+        
+        # Try to get the entry for the given country
+        entry, created = DataEntry.objects.get_or_create(
+            country=country_name, 
+            defaults={'date': date, 'c_cases': c_cases, 'c_deaths': c_deaths}
+        )
+        
+        if not created:
+            if entry.date <= date:  # Only update if it's a newer or same date
+                entry.date = date
+                entry.c_cases += c_cases  # Add the new cases to the existing total
+                entry.c_deaths += c_deaths  # Add the new deaths to the existing total
+                entry.save()
+        
+        return redirect('index')  # Redirect to the display page after adding
+
+    return render(request, 'covid_tracker_app/add_entry.html')
+
 
 def display_all_entries(request):
     entries = DataEntry.objects.all()
     return render(request, 'display.html', {'entries': entries})
 
-def remove_entry_page(request, country_name):
-    DataEntry.objects.filter(country=country_name).delete()
-    return redirect('display_entries')  # Redirect to the display page after deletion
+def remove_entry_page(request):
+    if request.method == 'POST':
+        country_name = request.POST.get('country_name')
+        if country_name:
+            DataEntry.objects.filter(country=country_name).delete()
+            messages.success(request, 'Data entry successfully deleted.')
+            return redirect('index')  # Redirect to the display page after deletion
+    return render(request, 'covid_tracker_app/remove_entry.html')
+
 
 def get_entry_page(request):
     if request.method == "POST":

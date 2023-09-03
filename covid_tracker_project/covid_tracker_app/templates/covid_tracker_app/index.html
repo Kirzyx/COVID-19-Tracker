@@ -3,12 +3,34 @@
 {% extends "covid_tracker_app/base.html" %}
 
 {% block content %}
-  <h1>Covid Tracker</h1>
-   <!-- Main Menu -->
-   <div class="menu">
-        <a href="{% url 'add_entry' %}">Add a new data entry</a><br>
-        <a href="{% url 'get_entry_page' %}">Get a data entry for a specific country</a><br>
-        <a href="{% url 'remove_entry_page' %}">Remove a data entry</a><br>
-        <a href="{% url 'display_entries' %}">Display all entries</a><br>
+  <!-- Display Flash Messages -->
+  {% if messages %}
+    <div id="messages">
+      {% for message in messages %}
+        <div{% if message.tags %} class="flash {{ message.tags }}"{% endif %}>
+          {{ message }}
+        </div>
+      {% endfor %}
     </div>
+  {% endif %}
+
+  <h1>Covid Tracker</h1>
+  <!-- Main Menu -->
+  <div class="menu">
+    <a href="{% url 'add_entry' %}">Add a new data entry</a><br>
+    <a href="{% url 'get_entry_page' %}">Get a data entry for a specific country</a><br>
+    <a href="{% url 'remove_entry_page' %}">Remove a data entry</a><br>
+    <a href="{% url 'country_summary' %}">Display all entries</a><br>
+  </div>
+
+  <!-- JavaScript to remove flash messages -->
+  <script>
+    setTimeout(function() {
+      const el = document.getElementById('messages');
+      if (el) {
+        el.style.display = 'none';
+      }
+    }, 3000); // 3000 milliseconds = 3 seconds
+  </script>
+
 {% endblock %}
