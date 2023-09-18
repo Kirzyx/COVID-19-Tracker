@@ -1,5 +1,14 @@
-<form action="{% url 'get_entry_page' %}" method="post">
-    {% csrf_token %}
-    Country: <input type="text" name="country_name">
-    <input type="submit" value="Search">
-</form>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/pico.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<div class="center-container">
+  <form class="center-form" action="{% url 'get_entry_page' %}" method="post">
+      {% csrf_token %}
+      <label for="country_name">Search</label>
+      <input type="search" id="country_name" name="country_name" placeholder="Search for country" />
+      <input type="submit" value="Submit">
+  </form>
+</div>

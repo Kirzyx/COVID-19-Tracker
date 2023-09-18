@@ -1,6 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'css/pico.min.css' %}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +12,15 @@
 <body>
     <header>
         <!-- You can add site-wide header elements like navigation here -->
-        <nav>
-            <a href="{% url 'index' %}">Home</a>
-            <!-- other navigation links -->
-        </nav>
+        <nav class="top-nav">
+            <ul class="nav-list">
+              <li><a href="{% url 'home' %}" class="secondary">Home</a></li>
+            </ul>
+            <ul class="nav-list">
+              <li><strong>Covid Data Manager</strong></li>
+            </ul>
+          </nav>
+          
     </header>
     
     <main>
@@ -24,7 +31,7 @@
 
     <footer>
         <!-- You can add a site-wide footer here -->
-        <p>Copyright &copy; 2023 by Covid Tracker</p>
+        
     </footer>
 
     <!-- You can add site-wide scripts here -->

@@ -8,6 +8,7 @@ urlpatterns = [
     path('remove-entry-page/', views.remove_entry_page, name='remove_entry_page'),
     path('get-entry-page/', views.get_entry_page, name='get_entry_page'),
     path('get/<str:country_name>/', views.display_country_details, name='display_country_details'),
-    path('', views.index, name='index'),
+    path('', views.home, name='home'),
+    path('index', views.index, name='index'),
     path('country-summary/', views.display_country_summary, name='country_summary'),
 ]

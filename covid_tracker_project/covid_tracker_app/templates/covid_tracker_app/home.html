@@ -1,0 +1,35 @@
+<!-- covid_tracker_app/templates/covid_tracker_app/index.html -->
+{% extends "covid_tracker_app/base.html" %}
+{% load static %}
+{% block content %}
+  <!-- Display Flash Messages -->
+  {% if messages %}
+    <div id="messages">
+      {% for message in messages %}
+        <div{% if message.tags %} class="flash {{ message.tags }}"{% endif %}>
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <h1>Covid Data Manager</h1>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <p class="small-text">The Covid Data Manager is a Django-based web app for managing Covid-19 data entries by country. It enables adding, updating, viewing, and removing Covid-19 case and death data.</p>
+  <!-- Main Menu -->
+  <div class="home-menu">
+    <a role="button" href="{% url 'index' %}">Get Started</a><br>
+    <a role="button" class="contrast outline" href="https://github.com/Kirzyx/COVID-19-Tracker">About</a><br>
+  </div>
+
+  <!-- JavaScript to remove flash messages -->
+  <script>
+    setTimeout(function() {
+      const el = document.getElementById('messages');
+      if (el) {
+        el.style.display = 'none';
+      }
+    }, 3000); // 3000 milliseconds = 3 seconds
+  </script>
+
+{% endblock %}

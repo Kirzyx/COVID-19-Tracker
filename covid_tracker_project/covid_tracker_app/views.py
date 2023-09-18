@@ -95,3 +95,6 @@ def display_country_summary(request):
         total_deaths=Sum('c_deaths')
     ).order_by('country')
     return render(request, 'covid_tracker_app/country_summary.html', {'summary': summary})
+
+def home(request):
+    return render(request, 'covid_tracker_app/home.html')

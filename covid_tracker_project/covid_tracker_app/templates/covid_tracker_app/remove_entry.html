@@ -1,22 +1,28 @@
-{% extends "covid_tracker_app/base.html" %}
+{% load static %}
 
 {% block content %}
-  <h2>Remove a Data Entry</h2>
 
-  <form action="{% url 'remove_entry' %}" method="post">
-    {% csrf_token %}
-    <label for="country_name">Country:</label>
-    <input type="text" name="country_name" id="country_name" required>
-    <input type="submit" value="Remove">
-  </form>
+<link rel="stylesheet" href="{% static 'css/pico.min.css' %}">
 
-  {% if messages %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/remove_entry.css' %}">
+
+<div class="remove-center-container">
+    <h2>Remove a Data Entry</h2>
+    <form action="{% url 'remove_entry' %}" method="post">
+        {% csrf_token %}
+        <input type="search" name="country_name" placeholder="Country" id="country_name" required>
+        <input type="submit" value="Remove">
+    </form>
+
+    {% if messages %}
     <ul class="messages">
-      {% for message in messages %}
+        {% for message in messages %}
         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-      {% endfor %}
+        {% endfor %}
     </ul>
-  {% endif %}
+    {% endif %}
 
-  <a href="{% url 'index' %}">Go back to main menu</a>
+    <a href="{% url 'index' %}">Go back to main menu</a>
+</div>
+
 {% endblock %}

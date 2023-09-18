@@ -1,7 +1,6 @@
 <!-- covid_tracker_app/templates/covid_tracker_app/index.html -->
-
 {% extends "covid_tracker_app/base.html" %}
-
+{% load static %}
 {% block content %}
   <!-- Display Flash Messages -->
   {% if messages %}
@@ -14,13 +13,14 @@
     </div>
   {% endif %}
 
-  <h1>Covid Tracker</h1>
+  <h1>Get Started</h1>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
   <!-- Main Menu -->
   <div class="menu">
-    <a href="{% url 'add_entry' %}">Add a new data entry</a><br>
-    <a href="{% url 'get_entry_page' %}">Get a data entry for a specific country</a><br>
-    <a href="{% url 'remove_entry_page' %}">Remove a data entry</a><br>
-    <a href="{% url 'country_summary' %}">Display all entries</a><br>
+    <a role="button" href="{% url 'add_entry' %}">Add a new data entry</a><br>
+    <a role="button" href="{% url 'get_entry_page' %}">Get a data entry for a specific country</a><br>
+    <a role="button" href="{% url 'remove_entry_page' %}">Remove a data entry</a><br>
+    <a role="button" href="{% url 'country_summary' %}">Display all entries</a><br>
   </div>
 
   <!-- JavaScript to remove flash messages -->
